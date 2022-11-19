@@ -123,5 +123,4 @@ end
 # gem "strong_migrations", "~> 0.7.6"
 
 # New (non-template) Gems should be installed here.
-gem "view_component"
 gem 'newrelic_rpm'
