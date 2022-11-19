@@ -8,7 +8,9 @@
       <span class="text-gray-400 font-light mx-2">\</span>
       Report #<%= @report.id %>
     </h1>
-    <%= link_to t("edit"), edit_report_path(@report), class: "btn btn-white" %>
+    <% if @report.user_id == current_user.id %>
+     <%= link_to t("edit"), edit_report_path(@report), class: "btn btn-white" %>
+    <% end %>
   </div>
 
   <div class="p-8 bg-white rounded shadow">

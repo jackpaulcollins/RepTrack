@@ -1,6 +1,7 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   # Uncomment to enforce Pundit authorization
   # after_action :verify_authorized
@@ -81,6 +82,10 @@ class ReportsController < ApplicationController
     # authorize @report
   rescue ActiveRecord::RecordNotFound
     redirect_to reports_path
+  end
+
+  def ensure_correct_user
+    redirect_to reports_path unless @report.user_id == current_user.id
   end
 
   # Only allow a list of trusted parameters through.

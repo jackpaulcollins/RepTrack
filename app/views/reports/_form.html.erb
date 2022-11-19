@@ -3,7 +3,10 @@
 
   <div class="form-group">
     <%= form.label :rep_type %>
-    <%= form.text_field :rep_type, class: "form-control" %>
+    <%= form.select :rep_type, 
+                    PointsConcern::REP_TYPE_VALUES.collect { |k,v| [k.humanize, k]}, 
+                    class: "form-control" 
+    %>
   </div>
 
   <div class="form-group">
