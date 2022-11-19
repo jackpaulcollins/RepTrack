@@ -1,0 +1,17 @@
+<%= content_for :title, "Reports ##{@report.id}" %>
+<%= turbo_stream_from @report %>
+
+<div class="container px-4 mx-auto my-8">
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="h3">
+      <%= link_to "Reports", reports_path, class: "text-black" %>
+      <span class="text-gray-400 font-light mx-2">\</span>
+      Report #<%= @report.id %>
+    </h1>
+    <%= link_to t("edit"), edit_report_path(@report), class: "btn btn-white" %>
+  </div>
+
+  <div class="p-8 bg-white rounded shadow">
+    <%= render @report %>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_23_172246) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_19_195934) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -249,6 +249,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_172246) do
     t.index ["account_id"], name: "index_products_on_account_id"
   end
 
+  create_table "reports", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "account_id", null: false
+    t.integer "points"
+    t.string "rep_type"
+    t.integer "rep_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_reports_on_account_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
   create_table "user_connected_accounts", force: :cascade do |t|
     t.bigint "user_id"
     t.string "provider"
@@ -323,6 +335,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_172246) do
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
   add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
   add_foreign_key "products", "accounts"
+  add_foreign_key "reports", "accounts"
+  add_foreign_key "reports", "users"
   add_foreign_key "user_connected_accounts", "users"
   add_foreign_key "user_roles", "products"
 end
