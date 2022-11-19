@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: user_roles
+#
+#  id         :bigint           not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  product_id :bigint           not null
+#
+# Indexes
+#
+#  index_user_roles_on_product_id  (product_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (product_id => products.id)
+#
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+  product: one
+  name: one
+#
+two: 
+  product: two
+  name: two

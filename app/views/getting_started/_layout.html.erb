@@ -1,0 +1,22 @@
+<%= content_for :title, "Getting Started" %>
+
+<div class="container px-4 mx-auto my-8">
+  <h1 class="mb-4 text-center">
+    Getting Started
+  </h1>
+
+  <div class="items-center mx-auto mb-5 md:flex md:w-4/5 lg:w-3/5">
+    <h2 class="flex-shrink-0 pr-5 h4">
+      <%= "Step #{wizard_steps.find_index(step) + 1}" %>
+    </h2>
+    <div class="border-gray-300 md:pl-5 md:border-l">
+      <%= description %>
+    </div>
+  </div>
+
+  <%= render "steps" %>
+
+  <div class="p-8 bg-white rounded shadow">
+    <%= yield %>
+  </div>
+</div>

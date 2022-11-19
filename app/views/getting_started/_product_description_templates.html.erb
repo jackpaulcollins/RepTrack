@@ -1,0 +1,36 @@
+<template 
+  data-rich-text-templates-target="template"
+  data-template-name="Standard Greeting"
+  data-template-description="This is best used when saying hello."
+>
+  <p>
+    <b>Hey There!</b>
+    <br />
+    Check out this template.
+    <br />
+    <b>What is your favorite animal</b>
+  </p>
+</template>
+
+<template 
+  data-rich-text-templates-target="template"
+  data-template-name="Business Startup"
+  data-template-description="Do you wanna make money?"
+>
+  <b>So you wanna start a business mate?!</b>
+  <i>Here's 10 easy steps to make big $$$!</i>
+</template>
+
+<div data-modal-target="container" templatesdata-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard" class="fixed inset-0 z-10 flex items-center justify-center hidden overflow-y-auto animated fadeIn" style="z-index:9999;" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 z-10 overflow-y-auto">
+    <div class="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
+      <div class="relative px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
+        <h3 class="pb-3 mb-3 border-b border-gray-200">Description Templates</h3>
+        <div data-rich-text-templates-target="modal"></div>
+        <div class="mt-5">
+          <button data-action="click->modal#close" type="button" class="inline-flex justify-center w-full px-4 py-2 mt-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

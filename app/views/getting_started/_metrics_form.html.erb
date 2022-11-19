@@ -1,0 +1,13 @@
+<div class="flex gap-3 mb-3 nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <div class="grow">
+    <%= f.text_field :name, placeholder: "Name", class: "form-control", aria: { label: "metric name" } %>
+  </div>
+  <div class="grow">
+    <%= f.text_field :unit_of_measurement, placeholder: "Unit of Measurement", class: "form-control", aria: { label: "metric unit of measurement" } %>
+  </div>
+  <div class="grow">
+    <%= f.text_field :timeframe, placeholder: "Timeframe", class: "form-control", aria: { label: "metric timeframe" } %>
+  </div>
+  <button type="button" data-action="nested-form#remove" class="h-[2.625rem] px-3 mt-1 text-2xl text-white bg-indigo-600 rounded">-</button>
+  <%= f.hidden_field :_destroy %>
+</div>

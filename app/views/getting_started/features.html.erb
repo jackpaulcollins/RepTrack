@@ -1,0 +1,6 @@
+
+<%= render "layout", description: "What's the first thing on your todo plate? Try to plan it out in as much detail as you can." do %>
+  Features
+  <%= link_to "next", next_wizard_path(product_id: @product.id) %>
+  <%= link_to "back", previous_wizard_path(product_id: @product.id) %>
+<% end %>

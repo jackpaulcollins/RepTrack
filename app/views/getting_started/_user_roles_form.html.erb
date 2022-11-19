@@ -1,0 +1,7 @@
+<div class="flex mb-3 nested-form-wrapper" data-new-record="<%= f.object.new_record? %>" data-user-roles-counter-target="element">
+  <div class="w-full">
+    <%= f.text_field :name, placeholder: "Name e.g. \"Admin\"", class: "form-control", aria: { label: "user role name" } %>
+  </div>
+  <button type="button" data-action="nested-form#remove user-roles-counter#updateCount" class="h-[2.625rem] px-3 mt-1 ml-3 text-2xl text-white bg-indigo-600 rounded">-</button>
+  <%= f.hidden_field :_destroy %>
+</div>

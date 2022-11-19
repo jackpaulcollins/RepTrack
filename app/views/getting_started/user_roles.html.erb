@@ -1,0 +1,43 @@
+<%= render "layout", description: "Document some background information about your product. Don't worry if you don't know everything, you can always update it later." do %>
+  <%= form_with(model: @product, url: getting_started_path(product_id: @product.id), method: :put, data: { controller: "nested-form user-roles-counter" }) do |form| %>    
+    <%= render "shared/error_messages", resource: form.object %>
+    
+    <div class="flex flex-col-reverse xl:flex-row">
+      <div class="w-100 xl:w-2/3">
+        <h3>Your Product Users</h3>
+        <template data-nested-form-target="template">
+          <%= form.fields_for :user_roles, UserRole.new, child_index: "NEW_RECORD" do |user_roles_form| %>
+            <%= render "user_roles_form", f: user_roles_form %>
+          <% end %>
+        </template>
+
+        <%= form.fields_for :user_roles do |user_roles_form| %>
+          <%= render "user_roles_form", f: user_roles_form %>
+        <% end %>
+        <div data-nested-form-target="target"></div>
+        
+        <div class="flex items-center justify-center">
+          <button type="button" data-action="nested-form#add" class="w-12 h-12 text-2xl text-indigo-900 border-2 border-indigo-900 rounded-full">
+            +
+          </button>
+        </div>
+      </div>
+      <div class="mb-0 mb-10 w-100 xl: xl:ml-10 xl:w-1/3">
+        <div class="p-5 mx-auto border-2 border-indigo-900">
+          <div class="pb-3 text-2xl font-bold text-center">Your Product Has</div>
+          <div class="pb-3 font-bold text-center text-7xl" data-user-roles-counter-target="output">
+            0
+          </div>
+          <div class="text-2xl font-bold text-center">Different Users</div>
+        </div>
+        <div class="mx-auto mt-5" data-user-roles-counter-target="warningWrapper">
+          <b>Woah! That's a lot of users!</b>
+          <p>We'd recommend starting off with 1-4 different roles and expand from there as needed.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <%= form.button button_text("Update User Roles"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>

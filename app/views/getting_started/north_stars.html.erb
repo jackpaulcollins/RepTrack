@@ -1,0 +1,26 @@
+<%= render "layout", description: "Document some background information about your product. Don't worry if you don't know everything, you can always update it later." do %>
+  <%= form_with(model: @product, url: getting_started_path(product_id: @product.id), method: :put, data: { controller: "nested-form" }) do |form| %>        
+    <div class="w-100">
+      <h3>Your North Stars</h3>
+      <template data-nested-form-target="template">
+        <%= form.fields_for :metrics, Metric.new, child_index: "NEW_RECORD" do |metrics_form| %>
+          <%= render "metrics_form", f: metrics_form %>
+        <% end %>
+      </template>
+
+      <%= form.fields_for :metrics do |metrics_form| %>
+        <%= render "metrics_form", f: metrics_form %>
+      <% end %>
+      <div data-nested-form-target="target"></div>
+      
+      <div class="flex items-center justify-center">
+        <button type="button" data-action="nested-form#add" class="w-12 h-12 text-2xl text-indigo-900 border-2 border-indigo-900 rounded-full">
+          +
+        </button>
+      </div>
+    </div>
+    <div>
+      <%= form.button button_text("Update North Stars"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>
