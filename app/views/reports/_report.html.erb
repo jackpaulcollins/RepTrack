@@ -1,11 +1,7 @@
 <div id="<%= dom_id report %>">
   <div class="mb-4">
     <p class="text-sm font-medium text-gray-500">User</p>
-    <%= report.user_id %>
-  </div>
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Account</p>
-    <%= report.account_id %>
+    <%= report.user.first_name %>
   </div>
   <div class="mb-4">
     <p class="text-sm font-medium text-gray-500">Points</p>

@@ -124,3 +124,4 @@ end
 
 # New (non-template) Gems should be installed here.
 gem "view_component"
+gem 'newrelic_rpm'
