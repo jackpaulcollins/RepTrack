@@ -4,7 +4,7 @@
   <div class="form-group">
     <%= form.label :rep_type %>
     <%= form.select :rep_type, 
-                    PointsConcern::REP_TYPE_VALUES.collect { |k,v| [k.humanize, k]}, 
+                    Report::REP_TYPE_VALUES.collect { |k,v| [k.humanize, k]}, 
                     class: "form-control" 
     %>
   </div>

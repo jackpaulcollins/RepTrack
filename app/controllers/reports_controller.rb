@@ -34,8 +34,6 @@ class ReportsController < ApplicationController
   # POST /reports or /reports.json
   def create
     @report = Report.new(report_params.merge(user_id: current_user.id))
-    points = @report.points
-    @report.points = points
     # Uncomment to authorize with Pundit
     # authorize @report
 
