@@ -34,6 +34,7 @@ class ReportsController < ApplicationController
   # POST /reports or /reports.json
   def create
     @report = Report.new(report_params.merge(user_id: current_user.id))
+
     # Uncomment to authorize with Pundit
     # authorize @report
 
@@ -88,7 +89,7 @@ class ReportsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def report_params
-    params.require(:report).permit(:user_id, :account_id, :points, :rep_type, :rep_count)
+    params.require(:report).permit(:user_id, :account_id, :points, :rep_type, :rep_count, :report_date)
 
     # Uncomment to use Pundit permitted attributes
     # params.require(:report).permit(policy(@report).permitted_attributes)

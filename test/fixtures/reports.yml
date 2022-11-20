@@ -2,14 +2,15 @@
 #
 # Table name: reports
 #
-#  id         :bigint           not null, primary key
-#  points     :integer
-#  rep_count  :integer
-#  rep_type   :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  account_id :bigint           not null
-#  user_id    :bigint           not null
+#  id          :bigint           not null, primary key
+#  points      :integer
+#  rep_count   :integer
+#  rep_type    :string
+#  report_date :date
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  account_id  :bigint           not null
+#  user_id     :bigint           not null
 #
 # Indexes
 #
