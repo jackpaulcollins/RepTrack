@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  include ReportPostConcern
   before_action :authenticate_user!
   before_action :set_report, only: [:show, :edit, :update, :destroy]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
@@ -40,6 +41,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
+        post_to_slack(@report)
         format.html { redirect_to @report, notice: "Report was successfully created." }
         format.json { render :show, status: :created, location: @report }
       else

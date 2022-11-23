@@ -184,10 +184,20 @@ GEM
       rubocop
       smart_properties
     erubi (1.10.0)
+    faraday (2.7.1)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-mashify (0.1.1)
+      faraday (~> 2.0)
+      hashie
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
     ffi (1.15.5)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    gli (2.21.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashids (1.0.6)
@@ -259,6 +269,7 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.16.1)
     msgpack (1.5.2)
+    multipart-post (2.2.3)
     name_of_person (1.1.1)
       activesupport (>= 5.2.0)
     net-imap (0.2.3)
@@ -391,6 +402,7 @@ GEM
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -410,6 +422,14 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
+    slack-notifier (2.4.0)
+    slack-ruby-client (2.0.0)
+      faraday (>= 2.0)
+      faraday-mashify
+      faraday-multipart
+      gli
+      hashie
+      websocket-driver
     smart_properties (1.17.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -482,6 +502,7 @@ DEPENDENCIES
   devise (~> 4.8, >= 4.8.1)
   devise-i18n (~> 1.10)
   erb_lint
+  faraday
   image_processing (~> 1.12)
   inline_svg (~> 1.6)
   invisible_captcha (~> 2.0)
@@ -516,6 +537,8 @@ DEPENDENCIES
   ruby-oembed (~> 0.16.0)
   selenium-webdriver
   sidekiq
+  slack-notifier
+  slack-ruby-client
   sprockets-rails (>= 3.4.1)
   standard
   stimulus-rails (~> 1.0, >= 1.0.2)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_19_195934) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_20_020957) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -257,6 +257,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_19_195934) do
     t.integer "rep_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "report_date"
     t.index ["account_id"], name: "index_reports_on_account_id"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
