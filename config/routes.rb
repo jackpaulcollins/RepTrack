@@ -126,7 +126,7 @@ Rails.application.routes.draw do
   match "/500", via: :all, to: "errors#internal_server_error"
 
   authenticated :user do
-    root to: "reports#index", as: :user_root
+    root to: "dashboard#show", as: :user_root
     resources :products, except: [:new]
     resources :getting_started
   end

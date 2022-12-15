@@ -1,6 +1,31 @@
 <div>
-  <h1><%= t(".title") %></h1>
-
-  <p class="mb-2">This is the homepage for logged in users.</p>
-  <p>You can customize this page in <code>app/views/dashboard/show.html.erb</code></p>
+  <div class="flex flex-row items-center w-1/3 m-auto justify-around mt-8 mb-4">
+    <h1> Leader Board </h1>
+    <%= link_to "Create Report", new_report_path, class: "btn btn-secondary" %>
+  </div>
+  <% @leader_board.each do |u| %>
+    <div class="overflow-hidden bg-white shadow sm:rounded-md">
+      <ul role="list" class="list-none divide-y divide-gray-200">
+        <li>
+          <div class="flex items-center px-4 py-4 sm:px-6">
+            <div class="flex min-w-0 flex-1 items-center">
+              <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
+                <div>
+                  <p class="truncate text-sm font-medium text-grey-600"><%= u.name %></p>
+                </div>
+                <div class="hidden md:block">
+                  <div>
+                    <p class="text-sm text-gray-900">
+                      Points
+                      <time datetime="2020-01-07"><%= u.report_points %></time>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 </div>

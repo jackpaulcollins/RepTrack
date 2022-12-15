@@ -88,4 +88,8 @@ class User < ApplicationRecord
   def display_name
     first_name + " " +  last_name
   end
+
+  def report_points
+    reports.sum(&:points)
+  end
 end
