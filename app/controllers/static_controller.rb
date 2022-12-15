@@ -5,6 +5,9 @@ class StaticController < ApplicationController
   def about
   end
 
+  def rep_info
+  end
+
   def pricing
     redirect_to root_path, alert: t(".no_plans") unless Plan.without_free.exists?
 

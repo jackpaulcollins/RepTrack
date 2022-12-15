@@ -34,7 +34,6 @@ class Report < ApplicationRecord
     "back_extension" => 2,
     "mountain_climber" => 1,
     "burpee" => 3,
-    "squat" => 2,
     "leg_raise" => 2,
     "body_weight_row" => 3,
     "mile" => 5,
