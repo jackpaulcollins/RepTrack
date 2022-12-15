@@ -1,7 +1,7 @@
 --- !ruby/object:Jumpstart::Configuration
 application_name: RepTrack
 business_name: RepTrack
-domain: example.com
+domain: 67kzd.hatchboxapp.com
 support_email: jack@workdoneperfect.com
 default_from_email: jack@workdoneperfect.com
 business_address: ''
