@@ -529,7 +529,7 @@ DEPENDENCIES
   rqrcode (~> 2.1)
   ruby-oembed (~> 0.16.0)
   selenium-webdriver
-  sidekiq (~> 7.0.2)
+  sidekiq
   slack-notifier
   slack-ruby-client
   sprockets-rails (>= 3.4.1)
