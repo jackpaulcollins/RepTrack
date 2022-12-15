@@ -1,3 +1,3 @@
 Sidekiq.configure_server do |config|
-    config.logger.level = Rails.logger.debug
-  end
+  config.logger = Sidekiq::Logger.new($stdout)
+end
