@@ -7,8 +7,8 @@ Rails.application.configure do
     address: "smtp.postmarkapp.com",
     port: 587,
     domain: "workdoneperfect.com",
-    user_name: Rails.application.credentials.postmark_api_token,
-    password: Rails.application.credentials.postmark_api_token
+    user_name: ENV["POSTMARK_KEY"],
+    password: ENV["POSTMARK_KEY"]
   }
   # Settings specified here will take precedence over those in config/application.rb.
 
