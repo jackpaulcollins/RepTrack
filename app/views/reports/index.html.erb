@@ -8,11 +8,7 @@
 
       <div class="text-sm font-medium">
         <span class="text-gray-500">Sort by:</span>
-        <%= sortable @reports, :user_id, "User", class: "text-gray-700 mr-1" %>
-        <%= sortable @reports, :account_id, "Account", class: "text-gray-700 mr-1" %>
         <%= sortable @reports, :points, "Points", class: "text-gray-700 mr-1" %>
-        <%= sortable @reports, :rep_type, "Rep type", class: "text-gray-700 mr-1" %>
-        <%= sortable @reports, :rep_count, "Rep count", class: "text-gray-700 mr-1" %>
       </div>
     </div>
 
