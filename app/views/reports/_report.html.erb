@@ -1,22 +1,29 @@
 <div id="<%= dom_id report %>">
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">User</p>
-    <%= report.user.first_name %>
+  <div class="flex items-center justify-between p-5 space-x-5 bg-gray-100 rounded-lg shadow">
+    <div class="flex items-center space-x-5">
+      <div class="flex-shrink-0">
+      </div>
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900"><%= report.user.display_name %></h1>
+      </div>
+    </div>
   </div>
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Date</p>
-    <%= report.report_date %>
-  </div>
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Points</p>
-    <%= report.points %>
-  </div>
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Rep type</p>
-    <%= report.rep_type.humanize %>
-  </div>
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Rep count</p>
-    <%= report.rep_count %>
+  <div class="pt-5 overflow-hidden">
+    <div class="py-5 border-t border-gray-200">
+      <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+        <div class="sm:col-span-1">
+          <dt class="text-sm font-medium text-gray-500">Date</dt>
+          <dd class="mt-1 text-sm text-gray-900"><%= report.report_date.to_formatted_s(:long) %></dd>
+        </div>
+        <div class="sm:col-span-1">
+          <dt class="text-sm font-medium text-gray-500">Rep Type</dt>
+          <dd class="mt-1 text-sm text-gray-900"><%= report.rep_type.humanize %></dd>
+        </div>
+        <div class="sm:col-span-1">
+          <dt class="text-sm font-medium text-gray-500">Points</dt>
+          <dd class="mt-1 text-sm text-gray-900"><%= report.points %></dd>
+        </div>
+      </dl>
+    </div>
   </div>
 </div>

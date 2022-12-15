@@ -1,6 +1,5 @@
 <div id="<%= dom_id(report, :index) %>">
   <%= turbo_stream_from report %>
-  <%= render report %>
-  <%= link_to "View", report, class: "btn btn-white" %>
+  <%= render "reports/list_reports", report: report %>
 </div>
 
