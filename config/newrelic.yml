@@ -3,7 +3,7 @@
 # .NET, PHP, Python, Node, and Go applications with deep visibility and low
 # overhead.  For more information, visit www.newrelic.com.
 #
-# Generated November 19, 2022
+# Generated December 14, 2022
 #
 # This configuration file is custom generated for NewRelic Administration
 #
@@ -12,11 +12,11 @@
 
 common: &default_settings
   # Required license key associated with your New Relic account.
-  license_key: 844764836ef8df6eaa232a8e995a6a26f448NRAL
+  license_key: 0c8b72f02192961a76d9f77aec9a15eaf6dfNRAL
 
   # Your application name. Renaming here affects where data displays in New
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
-  app_name: rep tracker
+  app_name: rep_track
 
   distributed_tracing:
     enabled: true
@@ -50,7 +50,7 @@ common: &default_settings
 # If your application has other named environments, configure them here.
 development:
   <<: *default_settings
-  app_name: rep tracker (Development)
+  app_name: <applicationName> (Development)
 
 test:
   <<: *default_settings
@@ -59,7 +59,7 @@ test:
 
 staging:
   <<: *default_settings
-  app_name: rep tracker (Staging)
+  app_name: <applicationName> (Staging)
 
 production:
   <<: *default_settings
