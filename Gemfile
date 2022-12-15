@@ -127,3 +127,4 @@ end
 
 # New (non-template) Gems should be installed here.
 gem 'newrelic_rpm'
+gem 'sidekiq', '~>7.0.2'
