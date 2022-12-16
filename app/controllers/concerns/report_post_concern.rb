@@ -7,7 +7,7 @@ module ReportPostConcern
     message = "#{report.user.first_name} reported #{report.rep_count} #{report.rep_type.humanize.pluralize} for #{report.points} points"
 
     notifier = Slack::Notifier.new ENV["SLACK_WEBHOOK"] do
-      defaults channel: "#api-test",
+      defaults channel: "#fitnessandhealth",
         username: "RepTrack"
     end
 
