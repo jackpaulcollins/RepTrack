@@ -112,7 +112,7 @@ gem "rotp", "~> 6.2"
 gem "rqrcode", "~> 2.1"
 gem "ruby-oembed", "~> 0.16.0", require: "oembed"
 gem "whenever", "~> 1.0", require: false
-gem "wicked", "~> 1.4.0"
+gem "wicked", "~> 2.0.0"
 gem 'slack-ruby-client'
 gem 'faraday'
 gem "slack-notifier"
