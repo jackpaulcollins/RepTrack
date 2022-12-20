@@ -37,7 +37,10 @@ class Report < ApplicationRecord
     "leg_raise" => 2,
     "body_weight_row" => 3,
     "mile" => 5,
-    "plank" => 20
+    "plank" => 20,
+    "sit_up" => 2,
+    "crunch" => 1,
+    "kegel" => 1
   }.freeze
 
   belongs_to :user
