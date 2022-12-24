@@ -41,7 +41,6 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
-        post_to_slack(@report)
         format.html { redirect_to root_url, notice: "Report was successfully created." }
         format.json { render :show, status: :created, location: @report }
       else
