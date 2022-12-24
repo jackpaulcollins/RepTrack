@@ -1,9 +1,11 @@
 <div>
   <div class="flex flex-col items-center w-5/6 m-auto justify-between mt-8 mb-4">
-    <h1 class="mb-4"> <%= current_account.name %> Leader Board </h1>
+    <h1 class="mb-4"> <%= current_account.name %> Rep Totals </h1>
     <%= link_to "Create Report", new_report_path, class: "btn btn-secondary" %>
   </div>
-  <% @leader_board.each do |u| %>
+  <% @totals.each do |u| %>
+   <%- name = u[0]%>
+   <%- rep_hash = u[1] %>
     <div class="overflow-hidden bg-white shadow sm:rounded-md">
       <ul role="list" class="list-none divide-y divide-gray-200">
         <li>
@@ -11,12 +13,11 @@
             <div class="flex min-w-0 flex-1 items-center">
               <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
                 <div>
-                  <p class="truncate text-sm font-medium text-grey-600"><%= u.name %></p>
+                  <p class="truncate text-sm font-medium text-grey-600"><%= name %></p>
                 </div>
                 <div>
                   <p class="text-sm text-gray-900">
-                    Points
-                    <span><%= u.report_points %></span>
+                    <span><%= rep_hash %></span>
                   </p>
                 </div>
               </div>

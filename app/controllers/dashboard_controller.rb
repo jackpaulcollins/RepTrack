@@ -3,7 +3,9 @@ class DashboardController < ApplicationController
 
   def show
     users = current_account.users
-    leader_board = users.sort_by { |u| u.reports.sum(:points)}
-    @leader_board = leader_board.reverse
+
+    @totals = users.each_with_object(Hash.new(0)) do | u, memo|
+      memo[u.first_name] = u.reports.group(:rep_type).sum(:rep_count)
+    end
   end
 end
