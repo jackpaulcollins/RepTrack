@@ -17,7 +17,9 @@
                 </div>
                 <div>
                   <p class="text-sm text-gray-900">
-                    <span><%= rep_hash %></span>
+                    <% rep_hash.transform_keys(&:humanize).each do |rep_type, count| %>
+                        <p><%= rep_type %>: <%= count %></p>
+                    <% end %>
                   </p>
                 </div>
               </div>
